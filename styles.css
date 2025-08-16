@@ -1,0 +1,41 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* For dev: used weights: 500 & 800 */
+
+/* Variables */
+:root {
+    --bg-color: rgb(244, 208, 78);
+    --white-color: rgba(255, 255, 255, 1); 
+    --gray-500: rgba(107, 107, 107, 1);
+    --gray-950: rgba(18, 18, 18, 1);
+}
+
+/* Disable defaults paddings & margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Setup default font */
+    font-family: "Figtree", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.blog__container {
+    width: 400px;
+    height: 550px;
+    background-color: var(--white-color);
+    border-radius: 15px;
+    border: 1px solid var(--gray-950);
+
+    box-shadow: 10px 10px 0 var(--gray-950);
+}
