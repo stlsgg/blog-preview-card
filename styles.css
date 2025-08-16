@@ -1,14 +1,14 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* For dev: used weights: 500 & 800 */
-
 /* Variables */
 :root {
-    --bg-color: rgb(244, 208, 78);
+    --yellow-color: rgb(244, 208, 78);
     --white-color: rgba(255, 255, 255, 1); 
     --gray-500: rgba(107, 107, 107, 1);
     --gray-950: rgba(18, 18, 18, 1);
+
+    --border-radius: 15px;
 }
 
 /* Disable defaults paddings & margins */
@@ -19,23 +19,102 @@
 
     /* Setup default font */
     font-family: "Figtree", sans-serif;
-    font-size: 16px;
+
+    /* font-size: 16px; */
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--yellow-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-.blog__container {
-    width: 400px;
-    height: 550px;
+.post__container {
+    width: min-content;
+    height: min-content;
     background-color: var(--white-color);
-    border-radius: 15px;
+    border-radius: var(--border-radius);
     border: 1px solid var(--gray-950);
 
     box-shadow: 10px 10px 0 var(--gray-950);
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.post__preview {
+    margin: 20px;
+    width: 330px;
+    height: 240px;
+    overflow: hidden;
+
+    border-radius: var(--border-radius);
+}
+
+.post__preview > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position:center;
+}
+
+.post__meta-container {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.post__tags-container {
+    display: inline-block;
+    margin: 0 0 20px 0;
+}
+
+.post__tag {
+    background-color: var(--yellow-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+.post__general-container {
+    margin: 5px 20px;
+}
+
+.post__title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) all 1s;
+}
+
+.post__title:hover {
+    color: var(--yellow-color);
+}
+
+.post__description {
+    color: var(--gray-500);
+}
+
+.post__author-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 15px 0;
+}
+
+.post__author__img > img {
+    width: 33px;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.post__author__fname {
+    font-weight: 800;
+    margin-left: 12px;
 }
